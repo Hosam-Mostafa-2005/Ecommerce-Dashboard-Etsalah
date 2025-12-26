@@ -1,0 +1,274 @@
+[
+  {
+    "id": "c1",
+    "name": "Ali Hassan",
+    "email": "ali.hassan@example.com",
+    "phone": "+201001112233",
+    "orders": 5,
+    "totalSpent": 620,
+    "joined": "2025-01-14"
+  },
+  {
+    "id": "c2",
+    "name": "Sara Ibrahim",
+    "email": "sara.ibrahim@example.com",
+    "phone": "+201115667890",
+    "orders": 3,
+    "totalSpent": 180,
+    "joined": "2025-02-20"
+  },
+  {
+    "id": "c3",
+    "name": "Omar Nabil",
+    "email": "omar.nabil@example.com",
+    "phone": "+201224557870",
+    "orders": 4,
+    "totalSpent": 410,
+    "joined": "2025-03-11"
+  },
+  {
+    "id": "c4",
+    "name": "Mona Adel",
+    "email": "mona.adel@example.com",
+    "phone": "+201093344567",
+    "orders": 2,
+    "totalSpent": 140,
+    "joined": "2025-03-28"
+  },
+  {
+    "id": "c5",
+    "name": "Kareem Mostafa",
+    "email": "kareem.mostafa@example.com",
+    "phone": "+201145667801",
+    "orders": 1,
+    "totalSpent": 60,
+    "joined": "2025-04-02"
+  },
+  {
+    "id": "c6",
+    "name": "Hala Reda",
+    "email": "hala.reda@example.com",
+    "phone": "+201059887612",
+    "orders": 2,
+    "totalSpent": 150,
+    "joined": "2025-04-18"
+  },
+  {
+    "id": "c7",
+    "name": "Ahmed Said",
+    "email": "ahmed.said@example.com",
+    "phone": "+201008887712",
+    "orders": 3,
+    "totalSpent": 220,
+    "joined": "2025-05-04"
+  },
+  {
+    "id": "c8",
+    "name": "Nour Fathy",
+    "email": "nour.fathy@example.com",
+    "phone": "+201019998812",
+    "orders": 2,
+    "totalSpent": 130,
+    "joined": "2025-05-12"
+  },
+  {
+    "id": "c9",
+    "name": "Mostafa Tarek",
+    "email": "mostafa.tarek@example.com",
+    "phone": "+201005551234",
+    "orders": 4,
+    "totalSpent": 395,
+    "joined": "2025-05-20"
+  },
+  {
+    "id": "c10",
+    "name": "Rana Ashraf",
+    "email": "rana.ashraf@example.com",
+    "phone": "+201122334455",
+    "orders": 1,
+    "totalSpent": 45,
+    "joined": "2025-06-01"
+  },
+
+  {
+    "id": "c11",
+    "name": "Youssef Ehab",
+    "email": "youssef.ehab@example.com",
+    "phone": "+201223344556",
+    "orders": 2,
+    "totalSpent": 160,
+    "joined": "2025-06-12"
+  },
+  {
+    "id": "c12",
+    "name": "Nadia Samir",
+    "email": "nadia.samir@example.com",
+    "phone": "+201133221145",
+    "orders": 3,
+    "totalSpent": 210,
+    "joined": "2025-06-22"
+  },
+  {
+    "id": "c13",
+    "name": "Mohamed Adel",
+    "email": "mohamed.adel@example.com",
+    "phone": "+201177889900",
+    "orders": 4,
+    "totalSpent": 445,
+    "joined": "2025-07-01"
+  },
+  {
+    "id": "c14",
+    "name": "Farah Osama",
+    "email": "farah.osama@example.com",
+    "phone": "+201199334455",
+    "orders": 2,
+    "totalSpent": 110,
+    "joined": "2025-07-05"
+  },
+  {
+    "id": "c15",
+    "name": "Hassan Fouad",
+    "email": "hassan.fouad@example.com",
+    "phone": "+201144556677",
+    "orders": 3,
+    "totalSpent": 240,
+    "joined": "2025-07-10"
+  },
+  {
+    "id": "c16",
+    "name": "Laila Mohamed",
+    "email": "laila.mohamed@example.com",
+    "phone": "+201188776655",
+    "orders": 1,
+    "totalSpent": 30,
+    "joined": "2025-07-12"
+  },
+  {
+    "id": "c17",
+    "name": "Tamer Ali",
+    "email": "tamer.ali@example.com",
+    "phone": "+201109876543",
+    "orders": 2,
+    "totalSpent": 170,
+    "joined": "2025-07-14"
+  },
+  {
+    "id": "c18",
+    "name": "Marwa Hassan",
+    "email": "marwa.hassan@example.com",
+    "phone": "+201133667788",
+    "orders": 1,
+    "totalSpent": 80,
+    "joined": "2025-07-20"
+  },
+  {
+    "id": "c19",
+    "name": "Ola Essam",
+    "email": "ola.essam@example.com",
+    "phone": "+201166778899",
+    "orders": 3,
+    "totalSpent": 205,
+    "joined": "2025-07-22"
+  },
+  {
+    "id": "c20",
+    "name": "Ayman Gamal",
+    "email": "ayman.gamal@example.com",
+    "phone": "+201177665544",
+    "orders": 2,
+    "totalSpent": 120,
+    "joined": "2025-07-24"
+  },
+
+  {
+    "id": "c21",
+    "name": "Reem Hassan",
+    "email": "reem.hassan@example.com",
+    "phone": "+201109911223",
+    "orders": 2,
+    "totalSpent": 160,
+    "joined": "2025-07-26"
+  },
+  {
+    "id": "c22",
+    "name": "Bassel Omar",
+    "email": "bassel.omar@example.com",
+    "phone": "+201105577889",
+    "orders": 4,
+    "totalSpent": 510,
+    "joined": "2025-07-28"
+  },
+  {
+    "id": "c23",
+    "name": "Jana Adel",
+    "email": "jana.adel@example.com",
+    "phone": "+201133998877",
+    "orders": 2,
+    "totalSpent": 130,
+    "joined": "2025-07-29"
+  },
+  {
+    "id": "c24",
+    "name": "Khaled Nader",
+    "email": "khaled.nader@example.com",
+    "phone": "+201122556677",
+    "orders": 3,
+    "totalSpent": 295,
+    "joined": "2025-07-30"
+  },
+  {
+    "id": "c25",
+    "name": "Doaa Ayman",
+    "email": "doaa.ayman@example.com",
+    "phone": "+201177123456",
+    "orders": 1,
+    "totalSpent": 60,
+    "joined": "2025-08-01"
+  },
+  {
+    "id": "c26",
+    "name": "Ehab Hany",
+    "email": "ehab.hany@example.com",
+    "phone": "+201122445667",
+    "orders": 2,
+    "totalSpent": 155,
+    "joined": "2025-08-02"
+  },
+  {
+    "id": "c27",
+    "name": "Nourhan Sami",
+    "email": "nourhan.sami@example.com",
+    "phone": "+201188554433",
+    "orders": 3,
+    "totalSpent": 240,
+    "joined": "2025-08-03"
+  },
+  {
+    "id": "c28",
+    "name": "Mahmoud Reda",
+    "email": "mahmoud.reda@example.com",
+    "phone": "+201166432198",
+    "orders": 2,
+    "totalSpent": 125,
+    "joined": "2025-08-04"
+  },
+  {
+    "id": "c29",
+    "name": "Aya Sherif",
+    "email": "aya.sherif@example.com",
+    "phone": "+201133224466",
+    "orders": 2,
+    "totalSpent": 145,
+    "joined": "2025-08-05"
+  },
+  {
+    "id": "c30",
+    "name": "Walid Magdy",
+    "email": "walid.magdy@example.com",
+    "phone": "+201199332211",
+    "orders": 4,
+    "totalSpent": 430,
+    "joined": "2025-08-06"
+  }
+]
