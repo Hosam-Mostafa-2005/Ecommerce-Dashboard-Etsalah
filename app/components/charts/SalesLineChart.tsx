@@ -1,107 +1,107 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
-import { CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts";
-
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  ReferenceDot,
+} from "recharts";
 
-export const description = "A line chart with a label";
+/* ================= TYPES ================= */
+interface Props {
+  data: {
+    month: string;
+    sales: number;
+  }[];
+}
 
-// const chartData = [
-//   { month: "January", desktop: 186, mobile: 80 },
-//   { month: "February", desktop: 305, mobile: 200 },
-//   { month: "March", desktop: 237, mobile: 120 },
-//   { month: "April", desktop: 73, mobile: 190 },
-//   { month: "May", desktop: 209, mobile: 130 },
-//   { month: "June", desktop: 214, mobile: 140 },
-// ];
-
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "var(--chart-4)",
-  },
-  mobile: {
-    label: "Mobile",
-    color: "var(--chart-2)",
-  },
-} satisfies ChartConfig;
-
-const SalesLineChart = ({ data }: any) => {
+/* ================= TOOLTIP ================= */
+const CustomTooltip = ({ active, payload }: any) => {
+  if (!active || !payload?.length) return null;
+  const d = payload[0].payload;
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Sales Line Chart</CardTitle>
-        <CardDescription>January - June 2025</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig}>
-          <LineChart
-            accessibilityLayer
-            data={data}
-            margin={{
-              top: 20,
-              left: 12,
-              right: 12,
-            }}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
-            />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator="line" />}
-            />
-            <Line
-              dataKey="sales"
-              type="natural"
-              stroke="var(--color-desktop)"
-              strokeWidth={2}
-              dot={{
-                fill: "var(--chart-2)",
-              }}
-              activeDot={{
-                r: 6,
-              }}
-            >
-              <LabelList
-                position="top"
-                offset={12}
-                className="fill-foreground"
-                fontSize={12}
-              />
-            </Line>
-          </LineChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="text-muted-foreground leading-none">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
-    </Card>
+    <div className="bg-slate-900 text-white px-3 py-2 rounded-lg shadow-xl text-xs">
+      <p className="font-semibold mb-1">{d.month}</p>
+      <p className="font-mono text-emerald-400">${d.sales.toLocaleString()}</p>
+    </div>
   );
 };
 
-export default SalesLineChart;
+/* ================= COMPONENT ================= */
+export default function SalesLineChart({ data }: Props) {
+  if (!data?.length) return null;
+
+  const lastPoint = data[data.length - 1];
+
+  return (
+    // ملاحظة: شيلنا الـ Card والـ Header من هنا عشان نتحكم فيهم من الصفحة الرئيسية
+    <div className="w-full h-full min-h-[300px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          data={data}
+          margin={{ top: 10, right: 10, left: -20, bottom: 0 }}
+        >
+          <defs>
+            <linearGradient id="salesGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.4} />
+              <stop offset="100%" stopColor="#3b82f6" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+
+          <CartesianGrid
+            stroke="#e2e8f0"
+            strokeDasharray="3 3"
+            vertical={false}
+          />
+
+          <XAxis
+            dataKey="month"
+            tick={{ fontSize: 12, fill: "#64748b" }}
+            axisLine={false}
+            tickLine={false}
+            dy={10}
+          />
+          <YAxis
+            tick={{ fontSize: 12, fill: "#64748b" }}
+            axisLine={false}
+            tickLine={false}
+            tickFormatter={(value) => `$${value}`}
+          />
+
+          <Tooltip
+            content={<CustomTooltip />}
+            cursor={{ stroke: "#cbd5e1", strokeDasharray: "4 4" }}
+          />
+
+          <Line
+            type="monotone"
+            dataKey="sales"
+            stroke="#3b82f6"
+            strokeWidth={3}
+            dot={false}
+            activeDot={{
+              r: 6,
+              fill: "#3b82f6",
+              stroke: "white",
+              strokeWidth: 2,
+            }}
+          />
+
+          {/* نقطة مضيئة عند آخر شهر */}
+          <ReferenceDot
+            x={lastPoint.month}
+            y={lastPoint.sales}
+            r={5}
+            fill="#3b82f6"
+            stroke="white"
+            strokeWidth={2}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}

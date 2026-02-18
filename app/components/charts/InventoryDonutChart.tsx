@@ -2,18 +2,18 @@
 
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
-const COLORS = ["#22c55e", "#eab308", "#ef4444"];
+const COLORS = ["#10b981", "#f59e0b", "#ef4444"]; // Green, Amber, Red
 
 interface Props {
-  inStock: number;
-  lowStock: number;
-  outOfStock: number;
+  inStock?: number;
+  lowStock?: number;
+  outOfStock?: number;
 }
 
 export default function InventoryDonutChart({
-  inStock,
-  lowStock,
-  outOfStock,
+  inStock = 0,
+  lowStock = 0,
+  outOfStock = 0,
 }: Props) {
   const data = [
     { name: "In Stock", value: inStock },
@@ -22,22 +22,33 @@ export default function InventoryDonutChart({
   ];
 
   return (
-    <div className="h-[220px]">
+    // خلينا الارتفاع 100% عشان ياخد مساحة الكارت اللي برا
+    <div className="w-full h-full min-h-[250px]">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
             data={data}
             dataKey="value"
             nameKey="name"
+            cx="50%"
+            cy="50%"
             innerRadius={60}
-            outerRadius={90}
-            paddingAngle={4}
+            outerRadius={85}
+            paddingAngle={5}
+            cornerRadius={5}
           >
             {data.map((_, index) => (
-              <Cell key={index} fill={COLORS[index]} />
+              <Cell key={index} fill={COLORS[index]} stroke="none" />
             ))}
           </Pie>
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              borderRadius: "8px",
+              border: "none",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+            }}
+            itemStyle={{ color: "#1e293b", fontWeight: "bold" }}
+          />
         </PieChart>
       </ResponsiveContainer>
     </div>

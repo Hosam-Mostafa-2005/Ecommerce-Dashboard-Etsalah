@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import SalesLineChart from "../components/charts/SalesLineChart";
 import KpiCard from "../components/kpi/KpiCard";
@@ -49,12 +50,14 @@ const getCustomerName = (customerId: string): string => {
 
 /* ================= PAGE ================= */
 export default function DashboardPage() {
+  const [visibleCount, setVisibleCount] = useState(5);
+
   const ordersArr: Order[] = orders as Order[];
 
   const totalOrders = ordersArr.length;
   const totalRevenue = ordersArr.reduce(
     (sum, order) => sum + Number(order.total || 0),
-    0
+    0,
   );
 
   const avgOrderValue = totalOrders > 0 ? totalRevenue / totalOrders : 0;
@@ -166,7 +169,7 @@ export default function DashboardPage() {
           </div>
 
           <div className="space-y-3 grow overflow-auto">
-            {recentOrders.map((order) => (
+            {recentOrders.slice(0, visibleCount).map((order) => (
               <div
                 key={order.id}
                 className="flex justify-between items-center p-2 rounded-lg hover:bg-gray-50"
@@ -187,10 +190,10 @@ export default function DashboardPage() {
                       order.status === "Delivered"
                         ? "bg-green-100 text-green-700"
                         : order.status === "Pending"
-                        ? "bg-yellow-100 text-yellow-700"
-                        : order.status === "Shipped"
-                        ? "bg-blue-100 text-blue-700"
-                        : "bg-red-100 text-red-700"
+                          ? "bg-yellow-100 text-yellow-700"
+                          : order.status === "Shipped"
+                            ? "bg-blue-100 text-blue-700"
+                            : "bg-red-100 text-red-700"
                     }`}
                   >
                     {order.status}
@@ -198,6 +201,28 @@ export default function DashboardPage() {
                 </div>
               </div>
             ))}
+
+            {visibleCount < recentOrders.length ? (
+              <div className="flex justify-center mt-4">
+                <Button
+                  className="bg-black"
+                  size="sm"
+                  onClick={() => setVisibleCount((prev) => prev + 5)}
+                >
+                  Show More
+                </Button>
+              </div>
+            ) : (
+              <div className="flex justify-center mt-4">
+                <Button
+                  className="bg-red-500"
+                  size="sm"
+                  onClick={() => setVisibleCount((prev) => prev - 5)}
+                >
+                  Show Less
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </section>

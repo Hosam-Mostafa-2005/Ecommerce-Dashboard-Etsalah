@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -30,7 +31,7 @@ export default function Navbar() {
               </Avatar>
             </div>
             <span className="hidden sm:block font-semibold text-gray-800">
-              Ecommerce Admin
+              <Link href="/dashboard">Ecommerce Admin</Link>
             </span>
           </div>
         </div>
@@ -66,8 +67,13 @@ export default function Navbar() {
             </DropdownMenuTrigger>
 
             <DropdownMenuContent align="end">
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/dashboard/customers/:id">Profile</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                {" "}
+                <Link href="/dashboard/settings">Settings</Link>
+              </DropdownMenuItem>
               <DropdownMenuItem>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

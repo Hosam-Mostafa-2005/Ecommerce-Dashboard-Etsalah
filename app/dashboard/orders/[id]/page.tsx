@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const getStatusVariant = (
-  status: string
+  status: string,
 ): "default" | "secondary" | "destructive" | "outline" => {
   switch (status) {
     case "Delivered":
@@ -43,7 +43,7 @@ export default function OrderDetailsPageClient() {
 
   // 2️⃣ الحصول على المنتج المرتبط بالأوردر
   const product = productsData.find(
-    (p) => stripPrefixToNumber(p.id) === stripPrefixToNumber(order.productId)
+    (p) => stripPrefixToNumber(p.id) === stripPrefixToNumber(order.productId),
   );
 
   if (!product) {

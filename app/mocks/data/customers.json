@@ -177,7 +177,7 @@
     "email": "ayman.gamal@example.com",
     "phone": "+201177665544",
     "orders": 2,
-    "totalSpent": 120,
+    "totalSpent": 1120,
     "joined": "2025-07-24"
   },
 
@@ -241,7 +241,7 @@
     "email": "nourhan.sami@example.com",
     "phone": "+201188554433",
     "orders": 3,
-    "totalSpent": 240,
+    "totalSpent": 1240,
     "joined": "2025-08-03"
   },
   {
@@ -270,5 +270,14 @@
     "orders": 4,
     "totalSpent": 430,
     "joined": "2025-08-06"
+  },
+  {
+    "id": "c30",
+    "name": "Walid Magdy",
+    "email": "walid.magdy22@example.com",
+    "phone": "+201199332211",
+    "orders": 4,
+    "totalSpent": 430,
+    "joined": "2026-01-20"
   }
 ]
