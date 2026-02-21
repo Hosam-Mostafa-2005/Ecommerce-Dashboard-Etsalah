@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import customers from "@/app/mocks/data/customers.json";
 import {
   Users,
@@ -39,7 +39,7 @@ interface Customer {
 /* =====================================================
    HELPER FUNCTIONS
 ===================================================== */
-// استخراج الحروف الأولى للاسم (مثال: Ahmed Ali -> AA)
+
 const getInitials = (name: string) => {
   return name
     .split(" ")

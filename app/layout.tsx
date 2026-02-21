@@ -31,8 +31,12 @@ export default function RootLayout({
       >
         {children}
 
-        {/* 👇 مهم جداً */}
-        <Toaster />
+        <Toaster
+          richColors
+          toastOptions={{
+            className: "shadow-xl border font-medium",
+          }}
+        />
       </body>
     </html>
   );

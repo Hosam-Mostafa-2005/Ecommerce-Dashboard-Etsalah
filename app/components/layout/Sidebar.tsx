@@ -44,7 +44,7 @@ export default function SidebarPage() {
 
   const mainItems: SidebarItem[] = [
     { id: "home", title: "Dashboard", href: "/dashboard", icon: Home },
-    { id: "calendar", title: "Schedule", href: "/calendar", icon: Calendar },
+    { id: "calendar", title: "Schedule", href: "/schedule", icon: Calendar },
   ];
 
   const managementItems: SidebarItem[] = [
@@ -104,8 +104,18 @@ export default function SidebarPage() {
   ];
 
   const configItems: SidebarItem[] = [
-    { id: "settings", title: "Settings", href: "/settings", icon: Settings },
-    { id: "help", title: "Help & Support", href: "/help", icon: HelpCircle },
+    {
+      id: "settings",
+      title: "Settings",
+      href: "/dashboard/settings",
+      icon: Settings,
+    },
+    {
+      id: "help",
+      title: "Help & Support",
+      href: "/dashboard/help",
+      icon: HelpCircle,
+    },
   ];
 
   /* ================= OPEN STATE ================= */

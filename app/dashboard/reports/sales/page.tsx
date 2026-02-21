@@ -188,7 +188,7 @@ export default function SalesAnalyticsPage() {
       </div>
 
       {/* INSIGHTS BOX */}
-      <div className="bg-gradient-to-r from-orange-300 to-grey-700 text-black rounded-xl p-6 shadow-lg">
+      <div className="bg-linear-to-r from-orange-300 to-grey-700 text-black rounded-xl p-6 shadow-lg">
         <h3 className="font-bold text-lg mb-2">📊 Performance Insight</h3>
 
         <p className="text-sm opacity-90">
