@@ -66,7 +66,6 @@ export default function LoginPage() {
     setTimeout(() => {
       setIsLoading(false);
 
-      // 1. حفظ بيانات المستخدم في Local Storage (محاكاة للـ Token)
       const userSession = {
         email: data.email,
         token: "fake-jwt-token-789xyz",
@@ -200,7 +199,7 @@ export default function LoginPage() {
             <div className="text-center text-sm text-slate-500">
               Don't have an account?{" "}
               <Link
-                href="/register"
+                href="/forms/register"
                 className="font-semibold text-amber-600 hover:text-amber-700 hover:underline"
               >
                 Create one
