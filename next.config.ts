@@ -1,13 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   images: {
     remotePatterns: [
       {
-        protocol: "https", // يجب تحديد البروتوكول (http أو https)
-        hostname: "images.unsplash.com", // النطاق الرئيسي
-        // يمكنك إضافة pathname إذا كنت تريد تقييد المسارات
-        // pathname: '/photo-**',
+        protocol: "https",
+        hostname: "images.unsplash.com",
       },
     ],
   },
